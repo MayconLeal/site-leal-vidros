@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vidraçaria Leal — Box, Coberturas e Vidros em Curitiba e Região</title>
+  <meta name="description" content="Vidraçaria Leal: soluções completas em vidro em Curitiba, litoral do PR e SC. Box sob medida, coberturas, guarda-corpos, películas e muito mais. Solicite seu orçamento agora!" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ========== VARIÁVEIS ========== */
+    :root {
+      --primary: #CC0000;
+      --primary-dark: #A30000;
+      --primary-light: #E60000;
+      --secondary: #1A1A1A;
+      --text: #333333;
+      --text-light: #666666;
+      --bg: #FFFFFF;
+      --bg-light: #F8F8F8;
+      --bg-dark: #0D0D0D;
+      --border: #E0E0E0;
+      --font: 'Inter', sans-serif;
+      --transition: 0.3s ease;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 40px rgba(204,0,0,0.18);
+    }
+
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== ANIMAÇÕES DE SCROLL ========== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+    .fade-up.delay-5 { transition-delay: 0.5s; }
+    .fade-up.delay-6 { transition-delay: 0.6s; }
+
+    /* ========== SEÇÃO LABEL ========== */
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--secondary);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ========== LINHA DECORATIVA ========== */
+    .red-line {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    /* ======================================
+       HEADER FLUTUANTE
+    ====================================== */
+    #header {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: calc(100% - 48px);
+      max-width: 1100px;
+      transition: top var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 20px 0 16px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 100px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10), 0 1px 0 rgba(204,0,0,0.08) inset;
+      border: 1px solid rgba(255,255,255,0.9);
+      transition: box-shadow var(--transition);
+    }
+
+    #header.scrolled .header-inner {
+      box-shadow: 0 8px 48px rgba(0,0,0,0.15), 0 1px 0 rgba(204,0,0,0.1) inset;
+    }
+
+    .header-logo img {
+      height: 40px;
+      width: auto;
+    }
+    .header-logo .logo-fallback {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--secondary);
+    }
+    .header-logo .logo-fallback span { color: var(--primary); }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .header-nav a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--secondary);
+      letter-spacing: 0.03em;
+      transition: color var(--transition);
+      position: relative;
+    }
+    .header-nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%; bottom: -4px;
+      width: 0; height: 2px;
+      background: var(--primary);
+      transform: translateX(-50%);
+      transition: width var(--transition);
+      border-radius: 2px;
+    }
+    .header-nav a:hover { color: var(--primary); }
+    .header-nav a:hover::after { width: 100%; }
+
+    .btn-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      white-space: nowrap;
+    }
+    .btn-header:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(204,0,0,0.3);
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--secondary);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+
+    /* Mobile nav */
+    @media (max-width: 900px) {
+      #header {
+        top: 12px;
+        width: calc(100% - 24px);
+      }
+      .header-inner {
+        border-radius: 20px;
+        padding: 0 16px;
+      }
+      .header-nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0; right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        gap: 0;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+        padding: 12px 20px 20px;
+        overflow: hidden;
+      }
+      .header-nav.open { display: flex; }
+      .header-nav a {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.95rem;
+        width: 100%;
+      }
+      .header-nav a::after { display: none; }
+      .btn-header { width: 100%; justify-content: center; margin-top: 10px; border-radius: 12px; padding: 13px; }
+      .menu-toggle { display: flex; }
+    }
+
+    /* ======================================
+       HERO
+    ====================================== */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('img/hero-bg-new.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.04);
+      transition: transform 8s ease;
+    }
+    #hero.loaded .hero-bg { transform: scale(1); }
+
+    /* Overlay escuro + gradiente vermelho sutil */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0,0,0,0.72) 0%,
+        rgba(0,0,0,0.58) 50%,
+        rgba(140,0,0,0.28) 100%
+      );
+    }
+
+    /* Linha vermelha vertical decorativa */
+    .hero-accent-line {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--primary);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 100px 24px 80px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(204,0,0,0.18);
+      border: 1px solid rgba(204,0,0,0.4);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+    .hero-badge i { color: var(--primary); font-size: 0.7rem; }
+
+    .hero-logo-center {
+      margin: 0 auto 32px;
+      max-width: 300px;
+      filter: drop-shadow(0 4px 24px rgba(0,0,0,0.5));
+    }
+
+    .hero-slogan {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+    }
+    .hero-title .highlight {
+      color: var(--primary);
+      position: relative;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 16px 32px;
+      border-radius: 4px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      letter-spacing: 0.04em;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(204,0,0,0.35);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 16px 32px;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .btn-secondary:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .hero-scroll i {
+      animation: bounce 2s infinite;
+      font-size: 1rem;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ======================================
+       SOBRE NÓS
+    ====================================== */
+    #sobre {
+      padding: 100px 0;
+      background: var(--bg);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-img-wrap {
+      position: relative;
+    }
+    .sobre-img-wrap img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    /* Placeholder da imagem */
+    .sobre-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--bg-light);
+      border: 2px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--text-light);
+      font-size: 0.88rem;
+      border-radius: 2px;
+    }
+    .sobre-img-placeholder i { font-size: 2rem; color: var(--border); }
+
+    /* Borda decorativa vermelha */
+    .sobre-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: -12px; left: -12px;
+      width: 60%; height: 60%;
+      border-top: 3px solid var(--primary);
+      border-left: 3px solid var(--primary);
+      pointer-events: none;
+    }
+    .sobre-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -12px; right: -12px;
+      width: 60%; height: 60%;
+      border-bottom: 3px solid var(--primary);
+      border-right: 3px solid var(--primary);
+      pointer-events: none;
+    }
+
+    .sobre-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 12px 20px;
+      margin-top: 24px;
+      border-radius: 2px;
+    }
+
+    .sobre-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item { text-align: left; }
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .sobre-text p {
+      color: var(--text-light);
+      margin-bottom: 18px;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .sobre-values {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .value-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+    .value-text strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 2px;
+    }
+    .value-text span {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 900px) {
+      .sobre-grid { grid-template-columns: 1fr; gap: 48px; }
+      .sobre-img-wrap::before, .sobre-img-wrap::after { display: none; }
+    }
+
+    /* ======================================
+       SERVIÇOS
+    ====================================== */
+    #servicos {
+      padding: 100px 0;
+      background: var(--bg-light);
+    }
+
+    .servicos-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .servico-card {
+      background: var(--bg);
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      cursor: default;
+    }
+    .servico-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: transparent;
+    }
+
+    .servico-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: var(--bg-light);
+      position: relative;
+      overflow: hidden;
+    }
+    .servico-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .servico-card:hover .servico-img img { transform: scale(1.05); }
+
+    /* Placeholder de imagem dos serviços */
+    .servico-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+      color: #bbb;
+      font-size: 0.8rem;
+    }
+    .servico-img-placeholder i { font-size: 1.8rem; }
+
+    .servico-icon-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px 0;
+    }
+    .servico-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .servico-icon-bar .line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .servico-body { padding: 14px 20px 24px; }
+    .servico-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+    .servico-body p {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 900px) {
+      .servicos-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .servicos-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ======================================
+       ÁREA DE ATUAÇÃO
+    ====================================== */
+    #atuacao {
+      padding: 80px 0;
+      background: var(--secondary);
+      position: relative;
+      overflow: hidden;
+    }
+    #atuacao::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--primary);
+    }
+
+    .atuacao-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .atuacao-text .section-label { color: rgba(255,255,255,0.5); }
+    .atuacao-text .section-title { color: #fff; }
+    .atuacao-text .section-subtitle { color: rgba(255,255,255,0.65); }
+
+    .atuacao-regioes {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 260px;
+    }
+    .regiao-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #fff;
+    }
+    .regiao-item i {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+    .regiao-item span { font-size: 0.95rem; font-weight: 500; }
+
+    /* ======================================
+       DIFERENCIAIS
+    ====================================== */
+    #diferenciais {
+      padding: 100px 0;
+      background: var(--bg);
+    }
+
+    .diferenciais-header { margin-bottom: 56px; }
+
+    .diferenciais-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .diferencial-card {
+      border-top: 3px solid var(--primary);
+      padding: 32px 24px;
+      background: var(--bg-light);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .diferencial-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+
+    .diferencial-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+    .diferencial-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+    .diferencial-card p {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 1024px) {
+      .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .diferenciais-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ======================================
+       AVALIAÇÕES
+    ====================================== */
+    #avaliacoes {
+      padding: 100px 0;
+      background: var(--bg-light);
+    }
+
+    .avaliacoes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-google {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid var(--border);
+      color: var(--secondary);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: 4px;
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .btn-google:hover { border-color: var(--primary); color: var(--primary); }
+    .btn-google img { width: 18px; height: 18px; }
+
+    .avaliacoes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .avaliacao-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 28px;
+      position: relative;
+      transition: box-shadow var(--transition);
+    }
+    .avaliacao-card:hover { box-shadow: var(--shadow); }
+    .avaliacao-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px; right: 20px;
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(204,0,0,0.07);
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    .avaliacao-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px;
+      color: #FFC107;
+      font-size: 0.9rem;
+    }
+    .avaliacao-card p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .avaliacao-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .avaliacao-avatar {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .avaliacao-info strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    .avaliacao-info span {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    .avaliacao-google-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .avaliacoes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .avaliacoes-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ======================================
+       CONTATO
+    ====================================== */
+    #contato {
+      padding: 100px 0;
+      background: var(--bg);
+    }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contato-info .section-subtitle { margin-bottom: 40px; }
+
+    .info-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .info-item-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      font-size: 1rem;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    .info-item-text strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .info-item-text span, .info-item-text a {
+      font-size: 0.95rem;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+    .info-item-text a:hover { color: var(--primary); }
+
+    /* Formulário */
+    .form-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--primary);
+      padding: 40px;
+      border-radius: 2px;
+    }
+    .form-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+    .form-card .form-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-family: var(--font);
+      font-size: 0.92rem;
+      color: var(--secondary);
+      background: var(--bg);
+      transition: border-color var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .btn-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      margin-top: 8px;
+      font-family: var(--font);
+    }
+    .btn-submit:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      .contato-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ======================================
+       FOOTER
+    ====================================== */
+    #footer {
+      background: var(--bg-dark);
+      color: rgba(255,255,255,0.65);
+      padding: 60px 0 0;
+      position: relative;
+    }
+    #footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand img { height: 42px; margin-bottom: 16px; }
+    .footer-brand .logo-fallback {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .footer-brand .logo-fallback span { color: var(--primary); }
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      max-width: 300px;
+      margin-bottom: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .social-link {
+      width: 38px;
+      height: 38px;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      transition: background var(--transition), color var(--transition);
+    }
+    .social-link:hover { background: var(--primary); color: #fff; }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col ul a {
+      font-size: 0.88rem;
+      transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--primary); }
+
+    .footer-bottom {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+    }
+    .footer-bottom a { color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    }
+
+    /* ======================================
+       BOTÃO WHATSAPP FLUTUANTE
+    ====================================== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      animation: pulse-wpp 2.5s infinite;
+      transition: transform var(--transition);
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      animation: none;
+    }
+    @keyframes pulse-wpp {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 40px rgba(37,211,102,0.7); }
+    }
+
+    /* ======================================
+       BOTÃO SCROLL TO TOP
+    ====================================== */
+    .scroll-top {
+      position: fixed;
+      bottom: 32px;
+      left: 32px;
+      z-index: 999;
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity var(--transition), transform var(--transition);
+      pointer-events: none;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .scroll-top:hover { background: var(--primary-dark); }
+
+    /* ======================================
+       RESPONSIVO GERAL
+    ====================================== */
+    @media (max-width: 768px) {
+      .whatsapp-float { bottom: 20px; right: 20px; }
+      .scroll-top { bottom: 20px; left: 20px; }
+      .hero-content { padding: 100px 24px 80px; }
+      .sobre-stats { flex-direction: column; gap: 20px; }
+      .atuacao-inner { flex-direction: column; }
+      .form-card { padding: 24px; }
+      .avaliacoes-header { flex-direction: column; align-items: flex-start; }
+      .servicos-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#hero" class="header-logo" aria-label="Vidraçaria Leal — Início">
+        <img src="img/logo.png" alt="Vidraçaria Leal — Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="logo-fallback" style="display:none;">VIDRAÇARIA <span>LEAL</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="header-nav" id="headerNav">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato">Contato</a>
+        <a href="https://wa.me/5541997206164?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="btn-header">
+          <i class="fa-brands fa-whatsapp"></i> Orçamento
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-accent-line"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge fade-up">
+      <i class="fa-solid fa-circle"></i>
+      Curitiba · Litoral do PR · Santa Catarina
+    </div>
+
+    <img
+      src="img/logo.png"
+      alt="Vidraçaria Leal"
+      class="hero-logo-center fade-up delay-1"
+      onerror="this.style.display='none'"
+    />
+
+    <p class="hero-slogan fade-up delay-2">Tecnologia, precisão e segurança em cada projeto.</p>
+
+    <h1 class="hero-title fade-up delay-3">
+      Soluções completas<br />em <span class="highlight">vidro</span> sob medida
+    </h1>
+
+    <div class="hero-ctas fade-up delay-4">
+      <a href="https://wa.me/5541997206164?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="btn-primary">
+        <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
+      </a>
+      <a href="#servicos" class="btn-secondary">
+        <i class="fa-solid fa-grid-2"></i> Ver Serviços
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ==================== SOBRE NÓS ==================== -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+
+      <div class="sobre-img-side fade-up">
+        <div class="sobre-img-wrap">
+          <img src="img/sobre-principal.jpg" alt="Equipe Vidraçaria Leal — especialistas em vidros temperados em Curitiba" />
+        </div>
+        <div class="sobre-badge">
+          <i class="fa-solid fa-award"></i>
+          Mais de 10 anos transformando espaços com vidro
+        </div>
+      </div>
+
+      <div class="sobre-text fade-up delay-2">
+        <span class="section-label">Quem somos</span>
+        <span class="red-line"></span>
+        <h2 class="section-title">Tradição, qualidade e sofisticação em vidros</h2>
+
+        <p>A Vidraçaria Leal nasceu da paixão por transformar ambientes com sofisticação e precisão. Com mais de 10 anos de atuação em Curitiba e região, construímos nossa reputação sobre três pilares inegociáveis: qualidade impecável, atendimento personalizado e compromisso com a segurança em cada projeto entregue.</p>
+
+        <p>Somos especializados em soluções completas em vidro, atendendo projetos residenciais e comerciais de alta padrão. Cada trabalho é tratado como único — do primeiro contato ao acabamento final, nossa equipe garante que cada milímetro esteja perfeito.</p>
+
+        <p>Nossa missão é clara: entregar o melhor projeto de vidro possível, sempre. Não abrimos mão da excelência, e é por isso que nossos clientes confiam em nós para transformar seus espaços com segurança, beleza e durabilidade.</p>
+
+        <div class="sobre-values">
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="value-text">
+              <strong>Missão</strong>
+              <span>Entregar soluções em vidro com qualidade, segurança e sofisticação, superando as expectativas de cada cliente.</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="value-text">
+              <strong>Visão</strong>
+              <span>Ser referência em vidraçaria no Paraná e Santa Catarina, reconhecidos pela excelência e confiança.</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="value-text">
+              <strong>Valores</strong>
+              <span>Precisão, comprometimento, transparência e respeito em cada etapa do projeto.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sobre-stats">
+          <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Anos de mercado</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Projetos entregues</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Estados atendidos</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVIÇOS ==================== -->
+<section id="servicos">
+  <div class="container">
+    <div class="servicos-header">
+      <div class="fade-up">
+        <span class="section-label">O que fazemos</span>
+        <span class="red-line"></span>
+        <h2 class="section-title">Nossos Serviços</h2>
+        <p class="section-subtitle">Soluções completas em vidro para residências e comércios, com qualidade garantida e atendimento sob medida.</p>
+      </div>
+      <a href="https://wa.me/5541997206164?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Vidraçaria%20Leal." target="_blank" class="btn-primary fade-up delay-2" style="height:fit-content;white-space:nowrap;">
+        <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
+      </a>
+    </div>
+
+    <div class="servicos-grid">
+
+      <!-- Serviço 1 -->
+      <div class="servico-card fade-up">
+        <div class="servico-img">
+          <img src="img/box-banheiro.jpg" alt="Box para banheiro sob medida com vidro temperado — Vidraçaria Leal Curitiba" />
+        </div>
+        <div class="servico-icon-bar">
+          <div class="servico-icon"><i class="fa-solid fa-shower"></i></div>
+          <div class="line"></div>
+        </div>
+        <div class="servico-body">
+          <h3>Box para Banheiro Sob Medida</h3>
+          <p>Vidro temperado de alta resistência, fabricado sob medida para o seu banheiro. Elegância, durabilidade e fácil limpeza para valorizar o seu espaço.</p>
+        </div>
+      </div>
+
+      <!-- Serviço 2 -->
+      <div class="servico-card fade-up delay-1">
+        <div class="servico-img">
+          <img src="img/coberturas.jpg" alt="Cobertura fixa e retrátil em vidro — Vidraçaria Leal Curitiba" />
+        </div>
+        <div class="servico-icon-bar">
+          <div class="servico-icon"><i class="fa-solid fa-house-chimney"></i></div>
+          <div class="line"></div>
+        </div>
+        <div class="servico-body">
+          <h3>Coberturas Fixas e Retráteis</h3>
+          <p>Coberturas em vidro para áreas externas, varandas e jardins. Proteja e valorize seu espaço com sofisticação e funcionalidade durante todo o ano.</p>
+        </div>
+      </div>
+
+      <!-- Serviço 3 -->
+      <div class="servico-card fade-up delay-2">
+        <div class="servico-img">
+          <img src="img/espelhos.jpg" alt="Espelho personalizado para diversos ambientes — Vidraçaria Leal Curitiba" />
+        </div>
+        <div class="servico-icon-bar">
+          <div class="servico-icon"><i class="fa-solid fa-expand"></i></div>
+          <div class="line"></div>
+        </div>
+        <div class="servico-body">
+          <h3>Espelhos Personalizados</h3>
+          <p>Espelhos sob medida para salas, banheiros, academias e ambientes comerciais. Ampliam espaços e adicionam elegância a qualquer projeto.</p>
+        </div>
+      </div>
+
+      <!-- Serviço 4 -->
+      <div class="servico-card fade-up delay-3">
+        <div class="servico-img">
+          <img src="img/prateleiras.jpg" alt="Prateleiras de vidro sob medida — Vidraçaria Leal Curitiba" />
+        </div>
+        <div class="servico-icon-bar">
+          <div class="servico-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="line"></div>
+        </div>
+        <div class="servico-body">
+          <h3>Prateleiras de Vidro Sob Medida</h3>
+          <p>Prateleiras em vidro temperado para cozinhas, banheiros e ambientes comerciais. Design clean e resistência superior para organizar com estilo.</p>
+        </div>
+      </div>
+
+      <!-- Serviço 6 -->
+      <div class="servico-card fade-up delay-2">
+        <div class="servico-img">
+          <img src="img/guarda-corpos.jpg" alt="Guarda-corpos em vidro temperado para sacadas e escadas — Vidraçaria Leal Curitiba" />
+        </div>
+        <div class="servico-icon-bar">
+          <div class="servico-icon"><i class="fa-solid fa-grip-lines"></i></div>
+          <div class="line"></div>
+        </div>
+        <div class="servico-body">
+          <h3>Guarda-Corpos</h3>
+          <p>Guarda-corpos em vidro temperado para sacadas, escadas e mezaninos. Segurança com visual leve e moderno que valoriza qualquer projeto arquitetônico.</p>
+        </div>
+      </div>
+
+      <!-- Serviço 7 -->
+      <div class="servico-card fade-up">
+        <div class="servico-img">
+          <img src="img/fechamento-sacadas.jpg" alt="Fechamento de sacadas e ambientes com vidro temperado — Vidraçaria Leal Curitiba" />
+        </div>
+        <div class="servico-icon-bar">
+          <div class="servico-icon"><i class="fa-solid fa-door-closed"></i></div>
+          <div class="line"></div>
+        </div>
+        <div class="servico-body">
+          <h3>Fechamento de Sacadas e Ambientes</h3>
+          <p>Fechamento total ou parcial de sacadas em vidro temperado. Amplia o espaço útil da sua residência com elegância e proteção contra vento e chuva.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ÁREA DE ATUAÇÃO ==================== -->
+<section id="atuacao">
+  <div class="container">
+    <div class="atuacao-inner">
+      <div class="atuacao-text fade-up">
+        <span class="section-label">Onde atendemos</span>
+        <span class="red-line" style="background:rgba(255,255,255,0.2)"></span>
+        <h2 class="section-title">Área de Atuação</h2>
+        <p class="section-subtitle">Atendemos projetos residenciais e comerciais em uma ampla região, levando qualidade e sofisticação onde você estiver.</p>
+      </div>
+
+      <div class="atuacao-regioes fade-up delay-2">
+        <div class="regiao-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Curitiba</span>
+        </div>
+        <div class="regiao-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Região Metropolitana de Curitiba</span>
+        </div>
+        <div class="regiao-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Litoral do Paraná</span>
+        </div>
+        <div class="regiao-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Santa Catarina</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIFERENCIAIS ==================== -->
+<section id="diferenciais">
+  <div class="container">
+    <div class="diferenciais-header fade-up">
+      <span class="section-label">Por que nos escolher</span>
+      <span class="red-line"></span>
+      <h2 class="section-title">Nossos Diferenciais</h2>
+      <p class="section-subtitle">Mais de 10 anos de experiência e centenas de projetos entregues nos tornaram referência em soluções de vidro na região.</p>
+    </div>
+
+    <div class="diferenciais-grid">
+
+      <div class="diferencial-card fade-up">
+        <div class="diferencial-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Mais de 10 Anos de Experiência</h3>
+        <p>Uma década transformando ambientes com precisão e qualidade. Nossa trajetória é a maior garantia de confiança que podemos oferecer.</p>
+      </div>
+
+      <div class="diferencial-card fade-up delay-1">
+        <div class="diferencial-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+        <h3>Tudo 100% Sob Medida</h3>
+        <p>Cada projeto é único. Fabricamos e instalamos conforme as medidas exatas do seu espaço, sem padrões pré-definidos que comprometam o resultado.</p>
+      </div>
+
+      <div class="diferencial-card fade-up delay-2">
+        <div class="diferencial-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Segurança e Qualidade Garantidas</h3>
+        <p>Trabalhamos com vidros temperados e laminados certificados. Qualidade do material e excelência na instalação em todos os projetos.</p>
+      </div>
+
+      <div class="diferencial-card fade-up delay-3">
+        <div class="diferencial-icon"><i class="fa-solid fa-headset"></i></div>
+        <h3>Atendimento Personalizado</h3>
+        <p>Cada cliente recebe atenção dedicada, do orçamento à entrega. Comunicação direta e transparente em todas as etapas do projeto.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AVALIAÇÕES ==================== -->
+<section id="avaliacoes">
+  <div class="container">
+    <div class="avaliacoes-header">
+      <div class="fade-up">
+        <span class="section-label">O que dizem nossos clientes</span>
+        <span class="red-line"></span>
+        <h2 class="section-title">Avaliações no Google</h2>
+      </div>
+      <a href="https://www.google.com/search?q=Vidraçaria+Leal+Curitiba" target="_blank" class="btn-google fade-up delay-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.3 9 3.4l6.7-6.7C35.8 2.5 30.3 0 24 0 14.6 0 6.6 5.5 2.7 13.5l7.8 6.1C12.4 13.3 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.5 2.8-2.2 5.2-4.7 6.8l7.4 5.7c4.3-4 6.8-9.9 6.8-16.5z"/><path fill="#FBBC05" d="M10.5 28.6A14.6 14.6 0 0 1 9.5 24c0-1.6.3-3.1.8-4.6l-7.8-6.1A23.9 23.9 0 0 0 0 24c0 3.9.9 7.6 2.5 10.9l8-6.3z"/><path fill="#34A853" d="M24 48c6.3 0 11.6-2.1 15.5-5.7l-7.4-5.7c-2.1 1.4-4.8 2.2-8.1 2.2-6.2 0-11.6-3.8-13.5-9.2l-8 6.3C6.6 42.5 14.6 48 24 48z"/></svg>
+        Ver todas no Google
+      </a>
+    </div>
+
+    <div class="avaliacoes-grid">
+
+      <!-- AVALIAÇÃO 1 — Ernesto Silva Júnior -->
+      <div class="avaliacao-card fade-up">
+        <span class="avaliacao-google-badge">Google</span>
+        <div class="avaliacao-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Profissional!!! Pegou um serviço mau feito por outro e me entregou muita qualidade, recomendo muito o serviço prestado!!!"</p>
+        <div class="avaliacao-author">
+          <div class="avaliacao-avatar">E</div>
+          <div class="avaliacao-info">
+            <strong>Ernesto Silva Júnior</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVALIAÇÃO 2 — Ciro Ribas Neto -->
+      <div class="avaliacao-card fade-up delay-1">
+        <span class="avaliacao-google-badge">Google</span>
+        <div class="avaliacao-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Muito rápido, boa qualidade e atendimento nota 10"</p>
+        <div class="avaliacao-author">
+          <div class="avaliacao-avatar">C</div>
+          <div class="avaliacao-info">
+            <strong>Ciro Ribas Neto</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVALIAÇÃO 3 — Murilo Brongel -->
+      <div class="avaliacao-card fade-up delay-2">
+        <span class="avaliacao-google-badge">Google</span>
+        <div class="avaliacao-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Equipe responsável e profissional, com preço justo! Proprietário Maicon muito gente boa. Super recomendo!"</p>
+        <div class="avaliacao-author">
+          <div class="avaliacao-avatar">M</div>
+          <div class="avaliacao-info">
+            <strong>Murilo Brongel</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVALIAÇÃO 4 — Danieli Grassi -->
+      <div class="avaliacao-card fade-up delay-3">
+        <span class="avaliacao-google-badge">Google</span>
+        <div class="avaliacao-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Ótimo atendimento, muito atenciosos, e preço muito bom... material de qualidade instalação impecável.... super recomendo"</p>
+        <div class="avaliacao-author">
+          <div class="avaliacao-avatar">D</div>
+          <div class="avaliacao-info">
+            <strong>Danieli Grassi</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVALIAÇÃO 5 — Fabio Junior -->
+      <div class="avaliacao-card fade-up delay-4">
+        <span class="avaliacao-google-badge">Google</span>
+        <div class="avaliacao-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Contratei essa impresa de curitiba.. que fez um excelente trabalho .. rapidez e qualidade... estão de parabéns!!!"</p>
+        <div class="avaliacao-author">
+          <div class="avaliacao-avatar">F</div>
+          <div class="avaliacao-info">
+            <strong>Fabio Junior</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVALIAÇÃO 6 — Lucas Matheus Ziolkoski Bezerra -->
+      <div class="avaliacao-card fade-up delay-5">
+        <span class="avaliacao-google-badge">Google</span>
+        <div class="avaliacao-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Vidraçaria de Qualidade, Muito capricho cuidado com a instalação e deixa tudo limpo, super indico os serviços da Leal Vidros. Maycon além de um excelente instalador é um ótimo vendedor!"</p>
+        <div class="avaliacao-author">
+          <div class="avaliacao-avatar">L</div>
+          <div class="avaliacao-info">
+            <strong>Lucas Matheus Ziolkoski Bezerra</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTATO ==================== -->
+<section id="contato">
+  <div class="container">
+    <div class="contato-grid">
+
+      <div class="contato-info fade-up">
+        <span class="section-label">Fale conosco</span>
+        <span class="red-line"></span>
+        <h2 class="section-title">Solicite seu Orçamento</h2>
+        <p class="section-subtitle">Entre em contato e receba uma proposta personalizada. Atendemos Curitiba, litoral do PR e Santa Catarina.</p>
+
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-item-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="info-item-text">
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/5541997206164" target="_blank">(41) 99720-6164</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="info-item-text">
+              <strong>Horário de Atendimento</strong>
+              <span>Seg a Sex: 08h às 18h &nbsp;|&nbsp; Sáb: 08h às 12h</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="info-item-text">
+              <strong>Atendimento</strong>
+              <span>Curitiba, Região Metropolitana, Litoral do PR e SC</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="info-item-text">
+              <strong>Instagram</strong>
+              <a href="https://www.instagram.com/lealv_idros/" target="_blank">@lealv_idros</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card fade-up delay-2">
+        <h3>Envie sua mensagem</h3>
+        <p class="form-subtitle">Preencha abaixo e receba uma resposta diretamente pelo WhatsApp.</p>
+
+        <form id="formContato" onsubmit="enviarWhatsApp(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Seu nome *</label>
+              <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required />
+            </div>
+            <div class="form-group">
+              <label for="telefone">WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(41) 9xxxx-xxxx" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="servico">Serviço de interesse *</label>
+            <select id="servico" name="servico" required>
+              <option value="" disabled selected>Selecione um serviço</option>
+              <option>Box para Banheiro Sob Medida</option>
+              <option>Coberturas Fixas e Retráteis</option>
+              <option>Espelhos Personalizados</option>
+              <option>Prateleiras de Vidro Sob Medida</option>
+              <option>Vidros Laminados</option>
+              <option>Guarda-Corpos</option>
+              <option>Fechamento de Sacadas e Ambientes</option>
+              <option>Películas e Película Espelhada</option>
+              <option>Manutenção e Reparos</option>
+              <option>Outro / Dúvida</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente o seu projeto ou dúvida..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <i class="fa-brands fa-whatsapp"></i>
+            Enviar via WhatsApp
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img src="img/logo.png" alt="Vidraçaria Leal" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <div class="logo-fallback" style="display:none;">VIDRAÇARIA <span>LEAL</span></div>
+        <p>Soluções completas em vidro com qualidade, segurança e sofisticação. Mais de 10 anos transformando espaços em Curitiba e região.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/lealv_idros/" target="_blank" class="social-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/5541997206164" target="_blank" class="social-link" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#avaliacoes">Avaliações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Box para Banheiro</a></li>
+          <li><a href="#servicos">Coberturas em Vidro</a></li>
+          <li><a href="#servicos">Guarda-Corpos</a></li>
+          <li><a href="#servicos">Fechamento de Sacadas</a></li>
+          <li><a href="#servicos">Películas</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Vidraçaria Leal Vidros · CNPJ 47.993.414/0001-22</span>
+      <span>Desenvolvido com <span style="color:var(--primary)">♥</span> para Curitiba e região</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== WHATSAPP FLUTUANTE ==================== -->
+<a
+  href="https://wa.me/5541997206164?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+  target="_blank"
+  class="whatsapp-float"
+  aria-label="Fale no WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- ==================== SCROLL TO TOP ==================== -->
+<button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+  /* ---------- Header flutuante scroll ---------- */
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* ---------- Menu mobile ---------- */
+  const menuToggle = document.getElementById('menuToggle');
+  const headerNav = document.getElementById('headerNav');
+  menuToggle.addEventListener('click', () => {
+    headerNav.classList.toggle('open');
+  });
+  document.querySelectorAll('#headerNav a').forEach(link => {
+    link.addEventListener('click', () => {
+      headerNav.classList.remove('open');
+    });
+  });
+
+  /* ---------- Scroll to top ---------- */
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- Animações de scroll (IntersectionObserver) ---------- */
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  /* ---------- Hero Ken Burns ---------- */
+  window.addEventListener('load', () => {
+    document.getElementById('hero').classList.add('loaded');
+  });
+
+  /* ---------- Formulário → WhatsApp ---------- */
+  function enviarWhatsApp(e) {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const servico = document.getElementById('servico').value;
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    let texto = `Olá! Me chamo *${nome}*`;
+    if (telefone) texto += `, meu WhatsApp é ${telefone}`;
+    texto += `.%0A%0A*Serviço de interesse:* ${servico}`;
+    if (mensagem) texto += `%0A%0A*Mensagem:* ${mensagem}`;
+    texto += `%0A%0ASolicito um orçamento. Obrigado!`;
+
+    const url = `https://wa.me/5541997206164?text=${encodeURIComponent(texto.replace(/%0A/g, '\n').replace(/%0A%0A/g, '\n\n'))}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
